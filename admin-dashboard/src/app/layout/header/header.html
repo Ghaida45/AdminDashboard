@@ -1,0 +1,27 @@
+<header [class.header-on-scroll]="scrolled()" class="transition-shadow duration-300 ease-in-out p-4">
+    <div class="flex flex-wrap justify-between items-center">
+        <div>
+            <div class="breadcrumbs flex gap-2">
+                <fa-icon class="opacity-40" [icon]="faHouse" />
+                <span>/</span>
+                <span class="font-light">Dashboard</span>
+            </div>
+            <span class="font-400">Dashboard</span>
+        </div>
+        <div class="flex gap-3">
+            <div class="shrink-0 bg-[rgb(15,21,53)] border border-[rgb(113,128,150)] rounded-xl flex justify-center items-center align-middle gap-2">
+                <fa-icon class="text-[1rem] font-bold ml-2 text-[rgb(113,128,150)]" [icon]="faMagnifyingGlass" />
+                <input class="bg-[rgb(15,21,53)] p-2 border border-transparent rounded-r-xl text-[0.750rem] w-50 focus:border-[rgb(98,143,194)] focus:outline-1 focus:outline-[rgb(98,143,194)]" type="text" placeholder="Type here...">
+            </div>
+            <button class="cursor-pointer shrink-0">
+                <div class="flex gap-1">
+                    <fa-icon [icon]="faCircleUser" />
+                    <span>Sign In</span>
+                </div>
+            </button>
+            <button class="lg:hidden cursor-pointer shrink-0" (click)="sidenav.toggle()"><fa-icon [icon]="faBars" /></button>
+            <button class="cursor-pointer shrink-0"><fa-icon [icon]="faGear" /></button>
+            <button class="cursor-pointer shrink-0"><fa-icon [icon]="faBell" /></button>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,9 @@
+<app-side-nav></app-side-nav>
+<div class="lg:ml-66.5 flex flex-col min-h-[calc(-2rem+100vh)]">
+  <app-header [scrolled]="scrolled()" [class.pt-4]="scrolled()" class="sticky top-0 z-10 pt-2"></app-header>
+  <main class="grow">
+    <router-outlet></router-outlet>
+      <!-- <div class="h-[2000px]"></div>-->
+  </main>
+  <app-footer></app-footer>
+</div>
