@@ -1,9 +1,10 @@
 import { Component, computed, inject } from '@angular/core';
 import { PostsService } from '../../../services/posts-service';
 import { ChartsWidget } from '../charts-widget/charts-widget';
+import { translate, TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-  imports: [ChartsWidget],
+  imports: [ChartsWidget, TranslatePipe],
   selector: 'app-reaction-chart',
   styleUrl: './reaction-chart.css',
   templateUrl: './reaction-chart.html',
@@ -25,8 +26,8 @@ export class ReactionChart {
     return [likes, dislikes];
   });
 
-  labels = [
-    $localize`:@@charts.reactions-likes:Likes`,
-    $localize`:@@charts.reactions-dislikes:Dislikes`,
-  ];
+  private likesLabel = translate('charts.reactions-likes');
+  private dislikesLabel = translate('charts.reactions-dislikes');
+
+  labels = computed(() => [this.likesLabel(), this.dislikesLabel()]);
 }

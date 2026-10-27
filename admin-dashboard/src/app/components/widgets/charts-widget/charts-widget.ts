@@ -1,4 +1,4 @@
-import { afterRenderEffect, Component, ElementRef, inject, input, LOCALE_ID, OnDestroy, viewChild } from '@angular/core';
+import { afterRenderEffect, Component, ElementRef, input, OnDestroy, viewChild } from '@angular/core';
 import { Chart, ChartDataset, ChartOptions, ChartType, registerables, ScatterDataPoint } from 'chart.js';
 
 Chart.register(...registerables);

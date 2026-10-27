@@ -1,9 +1,19 @@
 import { Routes } from '@angular/router';
-import { Dashboard } from './pages/dashboard/dashboard';
-import { Tables } from './pages/tables/tables';
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-    { path: 'dashboard', component: Dashboard, title: $localize`:@@route.dashboard:Dashboard` },
-    { path: 'tables', component: Tables, title: $localize`:@@route.tables:Tables` },
+    { 
+        path: '', 
+        redirectTo: 'dashboard', 
+        pathMatch: 'full' 
+    },
+    {
+        path: 'dashboard',
+        title: 'route.dashboard',
+        loadComponent: () => import('./pages/dashboard/dashboard').then(m => m.Dashboard),
+    },
+    {
+        path: 'tables',
+        title: 'route.tables',
+        loadComponent: () => import('./pages/tables/tables').then(m => m.Tables),
+    }
 ];

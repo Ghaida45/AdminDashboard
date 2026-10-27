@@ -1,9 +1,10 @@
 import { Component, computed, inject } from '@angular/core';
 import { PostsService } from '../../../services/posts-service';
 import { ChartsWidget } from '../charts-widget/charts-widget';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-  imports: [ChartsWidget],
+  imports: [ChartsWidget, TranslatePipe],
   selector: 'app-views-likes-chart',
   styleUrl: './views-likes-chart.css',
   templateUrl: './views-likes-chart.html',

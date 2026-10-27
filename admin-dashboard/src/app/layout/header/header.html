@@ -1,28 +1,30 @@
 <header [class.header-on-scroll]="scrolled()" class="transition-shadow duration-300 ease-in-out p-4">
-    <div class="flex flex-wrap justify-between items-center">
+    <div class="flex gap-2 flex-wrap justify-between items-center">
         <div>
             <div class="breadcrumbs flex gap-2">
                 <fa-icon class="opacity-40" [icon]="faHouse" />
                 <span>/</span>
-                <span class="font-light">{{ pageTitle() }}</span>
+                <span class="font-light">{{ pageTitle() | translate}}</span>
             </div>
-            <span class="font-400">{{ pageTitle() }}</span>
+            <span class="font-400">{{ pageTitle() | translate}}</span>
         </div>
-        <div class="flex gap-3">
+        <div class="flex gap-3 flex-wrap">
             <div class="shrink-0 bg-[rgb(15,21,53)] border border-[rgb(113,128,150)] rounded-xl flex justify-center items-center align-middle gap-2">
                 <fa-icon class="text-[1rem] font-bold ms-2 text-[rgb(113,128,150)]" [icon]="faMagnifyingGlass" />
-                <input class="bg-[rgb(15,21,53)] p-2 border border-transparent rounded-e-xl text-[0.750rem] w-50 focus:border-[rgb(98,143,194)] focus:outline-1 focus:outline-[rgb(98,143,194)]" type="text" placeholder="Type here..."  i18n-placeholder="@@header.search-placeholder">
+                <input class="bg-[rgb(15,21,53)] p-2 border border-transparent rounded-e-xl text-[0.750rem] w-50 focus:border-[rgb(98,143,194)] focus:outline-1 focus:outline-[rgb(98,143,194)]" type="text" [placeholder]="'header.search-placeholder' | translate">
             </div>
-            <button class="cursor-pointer shrink-0">
-                <div class="flex gap-1">
-                    <fa-icon [icon]="faCircleUser" />
-                    <span i18n="@@header.sign-in">Sign In</span>
-                </div>
-            </button>
-            <button class="lg:hidden cursor-pointer shrink-0" (click)="sidenav.toggle()"><fa-icon [icon]="faBars" /></button>
-            <button class="cursor-pointer shrink-0" (click)="switchLanguage()"><fa-icon [icon]="faLanguage" /></button>
-            <button class="cursor-pointer shrink-0"><fa-icon [icon]="faGear" /></button>
-            <button class="cursor-pointer shrink-0"><fa-icon [icon]="faBell" /></button>
+            <div class="flex gap-3 shrink-0">
+                <button class="cursor-pointer shrink-0">
+                    <div class="flex gap-1">
+                        <fa-icon [icon]="faCircleUser" />
+                        <span>{{ 'header.sign-in' | translate }}</span>
+                    </div>
+                </button>
+                <button class="lg:hidden cursor-pointer shrink-0" (click)="sidenav.toggle()"><fa-icon [icon]="faBars" /></button>
+                <button class="cursor-pointer shrink-0" (click)="language.toggle()"><fa-icon [icon]="faLanguage" /></button>
+                <button class="cursor-pointer shrink-0"><fa-icon [icon]="faGear" /></button>
+                <button class="cursor-pointer shrink-0"><fa-icon [icon]="faBell" /></button>
+            </div>
         </div>
     </div>
 </header>

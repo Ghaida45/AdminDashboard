@@ -1,0 +1,47 @@
+{
+    "header": {
+        "search-placeholder": "Type here...",
+        "sign-in": "Sign In"
+    },
+    "nav": {
+        "dashboard": "Dashboard",
+        "tables": "Tables",
+        "billing": "Billing",
+        "account-pages": "ACCOUNT PAGES",
+        "profile": "Profile",
+        "sign-in": "Sign In",
+        "sign-up": "Sign Up"
+    },
+    "footer": {
+        "made-with-love": "@ 2021, Made with ❤️",
+        "by": "by ",
+        "for-better-web": " for a better web",
+        "marketplace": "Marketplace",
+        "blog": "Blog",
+        "license": "License"
+    },
+    "charts": {
+        "reactions-title": "Reactions",
+        "reactions-likes": "Likes",
+        "reactions-dislikes": "Dislikes",
+        "tags-title": "Top Categories",
+        "tags-views-title": "Tags vs Average Views",
+        "tags-views-posts": "Posts",
+        "tags-views-avg-views": "Avg Views",
+        "tags-views-likes-title": "Tags Radar",
+        "tags-views-likes-avg-posts": "Posts",
+        "tags-views-likes-avg-views": "Avg Views",
+        "tags-views-likes-avg-likes": "Avg Likes",
+        "tags-views-likes-avg-dislikes": "Avg Dislikes",
+        "views-distribution-title": "Views Distribution",
+        "views-distribution-xTitle": "Views",
+        "views-distribution-yTitle": "Posts",
+        "views-likes-title": "Views to Likes",
+        "views-likes-xTitle": "Views",
+        "views-likes-yTitle": "Likes"
+    },
+    "route": {
+        "dashboard": "Dashboard",
+        "tables": "Tables"
+    }
+}

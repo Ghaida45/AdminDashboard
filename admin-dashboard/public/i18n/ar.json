@@ -1,0 +1,47 @@
+{
+    "header": {
+        "search-placeholder": "اكتب هنا...",
+        "sign-in": "تسجيل الدخول"
+    },
+    "nav": {
+        "dashboard": "لوحة التحكم",
+        "tables": "الجداول",
+        "billing": "الفواتير",
+        "account-pages": "صفحات الحساب",
+        "profile": "الملف الشخصي",
+        "sign-in": "تسجيل الدخول",
+        "sign-up": "إنشاء حساب"
+    },
+    "footer": {
+        "made-with-love": "@ 2021, صنع بحب ❤️",
+        "by": "بواسطة ",
+        "for-better-web": " من أجل ويب أفضل",
+        "marketplace": "المتجر",
+        "blog": "المدونة",
+        "license": "الترخيص"
+    },
+    "charts": {
+        "reactions-title": "التفاعلات",
+        "reactions-likes": "الإعجابات",
+        "reactions-dislikes": "عدم الإعجاب",
+        "tags-title": "أبرز التصنيفات",
+        "tags-views-title": "التصنيفات مقابل متوسط المشاهدات",
+        "tags-views-posts": "المنشورات",
+        "tags-views-avg-views": "متوسط المشاهدات",
+        "tags-views-likes-title": "رادار التصنيفات",
+        "tags-views-likes-avg-posts": "المنشورات",
+        "tags-views-likes-avg-views": "متوسط المشاهدات",
+        "tags-views-likes-avg-likes": "متوسط الإعجابات",
+        "tags-views-likes-avg-dislikes": "متوسط عدم الإعجاب",
+        "views-distribution-title": "توزيع المشاهدات",
+        "views-distribution-xTitle": "المشاهدات",
+        "views-distribution-yTitle": "المنشورات",
+        "views-likes-title": "المشاهدات مقابل الإعجابات",
+        "views-likes-xTitle": "المشاهدات",
+        "views-likes-yTitle": "الإعجابات"
+    },
+    "route": {
+        "dashboard": "لوحة التحكم",
+        "tables": "الجداول"
+    }
+}

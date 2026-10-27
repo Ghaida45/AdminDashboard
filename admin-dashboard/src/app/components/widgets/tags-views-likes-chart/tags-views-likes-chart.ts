@@ -2,9 +2,10 @@ import { Component, computed, inject } from '@angular/core';
 import { ChartsWidget } from '../charts-widget/charts-widget';
 import { PostsService } from '../../../services/posts-service';
 import { ChartDataset, ChartOptions } from 'chart.js';
+import { translate, TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-  imports: [ChartsWidget],
+  imports: [ChartsWidget, TranslatePipe],
   selector: 'app-tags-views-likes-chart',
   styleUrl: './tags-views-likes-chart.css',
   templateUrl: './tags-views-likes-chart.html',
@@ -12,10 +13,16 @@ import { ChartDataset, ChartOptions } from 'chart.js';
 export class TagsViewsLikesChart {
   private posts = inject(PostsService).posts;
 
+  private avgPosts = translate('charts.tags-views-likes-avg-posts');
+  private avgViews = translate('charts.tags-views-likes-avg-views');
+  private avgLikes = translate('charts.tags-views-likes-avg-likes');
+  private avgDislikes = translate('charts.tags-views-likes-avg-dislikes');
+
   radar = computed(() => {
     const posts = this.posts.value()?.posts ?? [];
 
-    const tagData: Record<string, { count: number, views: number, likes: number, dislikes: number }> = {}
+    // const tagData: Record<string, { count: number, views: number, likes: number, dislikes: number }> = {}
+    const tagData: {[key: string]: { count: number, views: number, likes: number, dislikes: number }} = {}
 
     for(const post of posts) {
       for(const tag of post.tags) {
@@ -43,12 +50,7 @@ export class TagsViewsLikesChart {
     const highestLikes = Math.max(...likes);
     const highestDislikes = Math.max(...dislikes);
 
-    const labels = [
-      $localize`:@@charts.tags-views-likes-avg-posts:Posts`, 
-      $localize`:@@charts.tags-views-likes-avg-views:Avg Views`, 
-      $localize`:@@charts.tags-views-likes-avg-likes:Avg Likes`, 
-      $localize`:@@charts.tags-views-likes-avg-dislikes:Avg Dislikes`, 
-    ]
+    const labels = [this.avgPosts(), this.avgViews(), this.avgLikes(), this.avgDislikes()]
 
     const postsCount = counts.map(t => Math.round((t / highestCount) * 100));
     const avgViews = views.map(t => Math.round((t / highestViews) * 100));

@@ -1,9 +1,10 @@
 import { Component, computed, inject } from '@angular/core';
 import { PostsService } from '../../../services/posts-service';
 import { ChartsWidget } from '../charts-widget/charts-widget';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-  imports: [ChartsWidget],
+  imports: [ChartsWidget, TranslatePipe],
   selector: 'app-tags-chart',
   styleUrl: './tags-chart.css',
   templateUrl: './tags-chart.html',
@@ -14,7 +15,7 @@ export class TagsChart {
   tags = computed(() => {
     const posts = this.posts.value()?.posts ?? [];
     
-    const tagsCount: Record<string, number> = {};
+    const tagsCount: {[key: string]: number} = {};
 
     for (const post of posts) {
       for (const tag of post.tags) {

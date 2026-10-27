@@ -1,13 +1,15 @@
-import { Component, inject, input, LOCALE_ID } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faHouse, faMagnifyingGlass, faCircleUser, faGear, faBell, faBars, faLanguage } from '@fortawesome/free-solid-svg-icons';
 import { SidenavState } from '../../services/sidenav-state';
 import { NavigationEnd, Router } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { filter, map } from 'rxjs';
+import { TranslatePipe } from '@ngx-translate/core';
+import { LanguageService } from '../../services/language-service';
 
 @Component({
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule, TranslatePipe],
   selector: 'app-header',
   styleUrl: './header.css',
   templateUrl: './header.html',
@@ -43,15 +45,5 @@ export class Header {
   sidenav = inject(SidenavState);
   scrolled = input(false);
 
-  private locale = inject(LOCALE_ID);
-  isArabic = this.locale.startsWith('ar');
-
-  switchLanguage() {
-    if(this.isArabic) {
-      window.location.href = 'http://localhost:52304';
-    } else {
-      window.location.href = 'http://localhost:4200'
-    }
-  }
-
+  language = inject(LanguageService);
 }

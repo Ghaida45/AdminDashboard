@@ -1,10 +1,10 @@
 import { Component, computed, inject } from '@angular/core';
 import { ChartsWidget } from '../charts-widget/charts-widget';
 import { PostsService } from '../../../services/posts-service';
-import { ChartDataset, ScriptableContext } from 'chart.js';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-  imports: [ChartsWidget],
+  imports: [ChartsWidget, TranslatePipe],
   selector: 'app-views-distribution-chart',
   styleUrl: './views-distribution-chart.css',
   templateUrl: './views-distribution-chart.html',

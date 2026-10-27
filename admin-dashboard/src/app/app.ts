@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { Header } from './layout/header/header';
 import { Footer } from './layout/footer/footer';
 import { SideNav } from './layout/side-nav/side-nav';
+import { LanguageService } from './services/language-service';
 
 @Component({
   imports: [RouterOutlet, Header, Footer, SideNav],
@@ -15,6 +16,7 @@ import { SideNav } from './layout/side-nav/side-nav';
 })
 export class App {
   protected readonly title = signal('admin-dashboard');
+  private language = inject(LanguageService);
 
   scrolled = signal(false);
   onScroll() {

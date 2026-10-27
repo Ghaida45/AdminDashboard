@@ -7,12 +7,6 @@
   "newProjectRoot": "projects",
   "projects": {
     "admin-dashboard": {
-      "i18n": {
-        "sourceLocale": "en-US",
-        "locales": {
-          "ar": { "translation": "src/locale/messages.ar.json" }
-        }
-      },
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -22,7 +16,6 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "localize": true,
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -31,11 +24,9 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.css"],
-            "polyfills": ["@angular/localize/init"]
+            "styles": ["src/styles.css"]
           },
           "configurations": {
-            "ar": { "localize": ["ar"] },
             "production": {
               "budgets": [
                 {

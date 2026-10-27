@@ -70,5 +70,9 @@ body {
     color: white;
     background-color: rgb(3, 12, 29);
     padding: 16px;
-    font-family: "Plus Jakarta Display", "Helvetica", "Arial", sans-serif;
+    font-family: sans-serif;
+}
+
+:lang(ar) body {
+  font-family: "Noto Sans Arabic", sans-serif;
 }

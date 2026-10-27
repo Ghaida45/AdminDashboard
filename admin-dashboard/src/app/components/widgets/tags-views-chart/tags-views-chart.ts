@@ -2,9 +2,10 @@ import { Component, computed, inject } from '@angular/core';
 import { ChartsWidget } from '../charts-widget/charts-widget';
 import { PostsService } from '../../../services/posts-service';
 import { ChartDataset, ChartOptions } from 'chart.js';
+import { translate, TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-  imports: [ChartsWidget],
+  imports: [ChartsWidget, TranslatePipe],
   selector: 'app-tags-views-chart',
   styleUrl: './tags-views-chart.css',
   templateUrl: './tags-views-chart.html',
@@ -15,7 +16,8 @@ export class TagsViewsChart {
   tagsViews = computed (() =>{
     const posts = this.posts.value()?.posts ?? [];
 
-    const tagsViews: Record<string, { count: number, views: number }> = {}
+    // const tagsViews: Record<string, { count: number, views: number }> = {}
+    const tagsViews: {[key: string]: { count: number, views: number }} = {}
 
     for (const post of posts) {
       for (const tag of post.tags) {
@@ -37,9 +39,12 @@ export class TagsViewsChart {
     return {labels, counts, avgViews}
   });
 
+  private postsLabel = translate('charts.tags-views-posts');
+  private avgViewsLabel = translate('charts.tags-views-avg-views');
+
   datasets = computed<ChartDataset[]>(() => [
-    { type: 'bar', label: $localize`:@@charts.tags-views-posts:Posts`, data: this.tagsViews().counts, yAxisID: 'y', order: 2 },
-    { type: 'line', label: $localize`:@@charts.tags-views-avg-views:Avg Views`, data: this.tagsViews().avgViews, yAxisID: 'y1', order: 1 },
+    { type: 'bar', label: this.postsLabel(), data: this.tagsViews().counts, yAxisID: 'y', order: 2 },
+    { type: 'line', label: this.avgViewsLabel(), data: this.tagsViews().avgViews, yAxisID: 'y1', order: 1 },
   ])
 
   chartOptions: ChartOptions = {
